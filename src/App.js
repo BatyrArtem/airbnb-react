@@ -7,8 +7,9 @@ import data from "./data.js"
 
 function App() {
 
-  const dataCard = data.map(instance => 
+  const cards = data.map(instance => 
   <Card 
+    key={instance.id}
     coverImg={instance.coverImg}
     rating={instance.stats.rating}
     reviewCount={instance.stats.reviewCount}
@@ -21,7 +22,10 @@ function App() {
     <div>
       <Navbar />
       <Hero />
-      {dataCard}
+      <section className="cards-list">
+        {cards}
+      </section>
+      
     </div>
   );
 }
